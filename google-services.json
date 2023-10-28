@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1091903912589",
+    "project_id": "crewters-android",
+    "storage_bucket": "crewters-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1091903912589:android:fda4ff6e040bd4d27740c4",
+        "android_client_info": {
+          "package_name": "com.crewters"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYKlZqj4vikSJFeRCVBYzEbSOvijvsCt0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
