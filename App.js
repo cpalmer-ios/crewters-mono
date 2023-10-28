@@ -1,6 +1,8 @@
+import React from 'react'
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import * as DevMenu from "expo-dev-menu";
+import Providers from "./src/navigation";
 
 const Button = ({ label, onPress }) => (
   <TouchableOpacity style={styles.buttonContainer} onPress={onPress}>
@@ -8,19 +10,25 @@ const Button = ({ label, onPress }) => (
   </TouchableOpacity>
 );
 
+// export default function App() {
+//   return (
+//     <View style={styles.container}>
+//       {/* <Text>Open up App.js to start working on your app!</Text>
+//       <Providers />
+//       <Button
+//         label="Open Dev Menu"
+//         onPress={() => {
+//           DevMenu.openMenu();
+//         }}
+//       />
+//       <StatusBar style="auto" /> */}
+//       <Providers />
+//     </View>
+//   );
+// }
+
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <Button
-        label="Open Dev Menu"
-        onPress={() => {
-          DevMenu.openMenu();
-        }}
-      />
-      <StatusBar style="auto" />
-    </View>
-  );
+  return <Providers />;
 }
 
 const styles = StyleSheet.create({
