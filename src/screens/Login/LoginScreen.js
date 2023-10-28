@@ -127,17 +127,18 @@ const LoginScreen = ({ navigation }) => {
             ) : null}
 
             {Platform.OS === "ios" ? (
-              <View>
+              
                 <AppleButton
                   buttonStyle={AppleButton.Style.WHITE}
                   buttonType={AppleButton.Type.SIGN_IN}
                   style={{
                     width: 350,
                     height: 45,
+                    zIndex: 9999
                   }}
                   onPress={() => appleLogin()}
                 />
-              </View>
+              
             ) : null}
 
           </>
