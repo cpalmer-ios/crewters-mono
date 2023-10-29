@@ -106,6 +106,10 @@ const LoginScreen = ({ navigation }) => {
               onPress={() => login(email, password)}
             />
 
+            <Text 
+            style={{ fontSize: 17, color: "white", marginTop: 20, marginBottom: 20 }}
+            >OR</Text>
+
             {Platform.OS === "android" ? (
               <View>
                 <SocialButton
@@ -117,7 +121,7 @@ const LoginScreen = ({ navigation }) => {
                 />
 
                 <SocialButton
-                  buttonTitle="Sign In with Google"
+                  buttonTitle="Sign Up with Google"
                   btnType="google"
                   color="#de4d41"
                   backgroundColor="#f5e7ea"
@@ -130,11 +134,12 @@ const LoginScreen = ({ navigation }) => {
               
                 <AppleButton
                   buttonStyle={AppleButton.Style.WHITE}
-                  buttonType={AppleButton.Type.SIGN_IN}
+                  buttonType={AppleButton.Type.SIGN_UP}
                   style={{
                     width: 350,
                     height: 45,
-                    zIndex: 9999
+                    zIndex: 9999,
+                    marginBottom: -20
                   }}
                   onPress={() => appleLogin()}
                 />
@@ -148,6 +153,7 @@ const LoginScreen = ({ navigation }) => {
         {/* <TouchableOpacity onPress={() => {}}>
               <Text style={{ fontSize: 12, color: "white", marginTop: 27 }}>Forgot Password?</Text>
             </TouchableOpacity> */}
+
           <View style={styles.bottom}>
             <View style={{ flexDirection: "row" }}>
               <Text

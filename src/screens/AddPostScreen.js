@@ -7,7 +7,7 @@ import {
   Alert,
   ActivityIndicator,
 } from 'react-native';
-// import ActionButton from 'react-native-action-button';
+import ActionButton from 'react-native-action-button';
 import Icon from 'react-native-vector-icons/Ionicons';
 import ImagePicker from 'react-native-image-crop-picker';
 
@@ -159,7 +159,7 @@ const AddPostScreen = () => {
           </SubmitBtn>
         )}
       </InputWrapper>
-      {/* <ActionButton buttonColor="#2e64e5">
+      <ActionButton buttonColor="#244c66">
         <ActionButton.Item
           buttonColor="#9b59b6"
           title="Take Photo"
@@ -172,7 +172,7 @@ const AddPostScreen = () => {
           onPress={choosePhotoFromLibrary}>
           <Icon name="md-images-outline" style={styles.actionButtonIcon} />
         </ActionButton.Item>
-      </ActionButton> */}
+      </ActionButton>
     </View>
   );
 };
