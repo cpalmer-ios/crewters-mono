@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {View} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
-import SignupScreen from '../screens/SignupScreen';
+import SignupScreen from '../screens/SignUp/SignupScreen';
 import LoginScreen from '../screens/Login/LoginScreen';
 import OnboardingScreen from '../screens/OnboardingScreen';
 
@@ -53,17 +53,17 @@ const AuthStack = () => {
         options={({navigation}) => ({
           title: '',
           headerStyle: {
-            backgroundColor: '#f9fafd',
+            backgroundColor: '#FFF',
             shadowColor: '#f9fafd',
-            elevation: 0,
+            elevation: 9,
           },
           headerLeft: () => (
             <View style={{marginLeft: 10}}>
               <FontAwesome.Button 
                 name="long-arrow-left"
                 size={25}
-                backgroundColor="#f9fafd"
-                color="#333"
+                backgroundColor="#FFF"
+                color="#244c66"
                 onPress={() => navigation.navigate('Login')}
               />
             </View>

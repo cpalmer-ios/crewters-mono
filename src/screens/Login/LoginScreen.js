@@ -97,7 +97,7 @@ const LoginScreen = ({ navigation }) => {
                 alignItems: 'center',
                 width: 350,
                 height: 45,
-                backgroundColor: '#000',
+                backgroundColor: '#244c66',
                 paddingTop: 10,
                 borderRadius: 5,
                 textColor: '#000'

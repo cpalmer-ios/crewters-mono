@@ -14,13 +14,13 @@ export default StyleSheet.create({
   topContainer: {
     alignItems: 'center',
     justifyContent: 'space-between',
-    height: '35%',
+    height: '33%',
   },
   logo: {
     height: 300,
     resizeMode: 'contain',
     marginBottom: 20,
-    marginTop:50,
+    marginTop: 200,
   },
   textInput: {
     backgroundColor: '#3a3a3a',
@@ -40,9 +40,8 @@ export default StyleSheet.create({
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 250,
-    marginBottom: 10,
-
+    marginTop: 225,
+    marginBottom: 10 
   },
   loginText: {
     fontSize: 14,
