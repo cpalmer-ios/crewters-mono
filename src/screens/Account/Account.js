@@ -10,8 +10,16 @@ import {
 } from 'react-native';
 
 import {AuthContext} from '../../navigation/AuthProvider';
-
 import firestore from '@react-native-firebase/firestore';
+
+import Container from '../../components/Container/Container';
+import ProfileBar from '../../components/ProfileBar/ProfileBar';
+import Bio from '../../components/Bio/Bio';
+import Highlights from '../../components/Highlights/Highlights';
+import ProfileHeader from '../../components/ProfileHeader/ProfileHeader';
+
+import TopTabNavigator from '../../navigation/TopTabNavigator';
+
 
 const AccountScreen = ({navigation, route}) => {
   const {user, logout} = useContext(AuthContext);
@@ -92,92 +100,13 @@ const AccountScreen = ({navigation, route}) => {
   const handleDelete = () => {};
 
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: '#fff'}}>
-      <ScrollView
-        style={styles.container}
-        contentContainerStyle={{justifyContent: 'center', alignItems: 'center'}}
-        showsVerticalScrollIndicator={false}>
-        <Image
-          style={styles.userImg}
-          source={{uri: userData ? userData.userImg : 'https://lh5.googleusercontent.com/-b0PKyNuQv5s/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclxAM4M1SCBGAO7Rp-QP6zgBEUkOQ/s96-c/photo.jpg'}}
-        />
-        <Text style={styles.userName}>{userData ? userData.fname || 'Test' : 'Test'} {userData ? userData.lname || 'User' : 'User'}</Text>
-        {/* <Text>{route.params ? route.params.userId : user.uid}</Text> */}
-        <Text style={styles.aboutUser}>
-        {userData ? userData.about || 'No details added.' : ''}
-        </Text>
-        <View style={styles.userBtnWrapper}>
-          {route.params ? (
-            <>
-              <TouchableOpacity style={styles.userBtn} onPress={() => {}}>
-                <Text style={styles.userBtnTxt}>Message</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.userBtn} onPress={() => {}}>
-                <Text style={styles.userBtnTxt}>Follow</Text>
-              </TouchableOpacity>
-            </>
-          ) : (
-            <>
-              <TouchableOpacity
-                style={styles.userBtn}
-                onPress={() => {
-                  navigation.navigate('EditProfile');
-                }}>
-                <Text style={styles.userBtnTxt}>Edit Profile</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.userBtn} onPress={() => logout()}>
-                <Text style={styles.userBtnTxt}>Logout</Text>
-              </TouchableOpacity>
-            </>
-          )}
-        </View>
-
-        <View style={styles.userInfoWrapper}>
-          <View style={styles.userInfoItem}>
-            <Text style={styles.userInfoTitle}>{posts.length}</Text>
-            <Text style={styles.userInfoSubTitle}>Posts</Text>
-          </View>
-          <View style={styles.userInfoItem}>
-            <Text style={styles.userInfoTitle}>10,000</Text>
-            <Text style={styles.userInfoSubTitle}>Followers</Text>
-          </View>
-          <View style={styles.userInfoItem}>
-            <Text style={styles.userInfoTitle}>100</Text>
-            <Text style={styles.userInfoSubTitle}>Following</Text>
-          </View>
-        </View>
-        <View
-        style={{
-          flex: 1,
-          backgroundColor: "black",
-          flexDirection: "row",
-          flexWrap: "wrap",
-        }}
-      >
-        {posts.map((item) => (
-          // <PostCard key={item.id} item={item} onDelete={handleDelete} />
-
-          <TouchableOpacity
-              style={{
-                width: "33%",
-                height: 135,                
-              }}
-              onPress={() => navigation.navigate("SinglePost", {
-                singlePost: post && post
-              })}
-            >
-              <Image
-                source={{ uri: 'https://lh5.googleusercontent.com/-b0PKyNuQv5s/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclxAM4M1SCBGAO7Rp-QP6zgBEUkOQ/s96-c/photo.jpg' }}
-                style={{
-                  width: "100%",
-                  height: 135,  
-                }}
-              />
-            </TouchableOpacity>
-        ))}
-         </View>
-      </ScrollView>
-    </SafeAreaView>
+    <Container insets={{top: true, right: true, bottom: true}}>
+      <ProfileBar/>
+      <ProfileHeader posts={posts} route={route.params} />
+      <Bio route={route.params} user={user && user} />
+      <Highlights />
+      <TopTabNavigator />
+    </Container>
   );
 };
 

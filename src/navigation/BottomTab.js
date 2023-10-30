@@ -10,7 +10,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 // import Discover from '../views/Discover/Discover';
 // import Search from '../views/Search/Search';
 
-import AccountScreen from '../screens/AccountScreen/AccountScreen';
+import AccountScreen from '../navigation/AccountScreen';
 import HomeScreen from '../screens/HomeScreen';
 // import StoreScreen from './StoreScreen';
 import {AuthContext} from '../navigation/AuthProvider.ios';
