@@ -2,11 +2,11 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 // import Comment from '../views/Comment/Comment';
-// import Login from '../views/Login/Login';
+// import Login from '../screens/Login/LoginScreen'
 // import Story from '../views/Story/Story';
 
 import BottomTab from './BottomTab';
-// import EditProfile from './EditProfile';
+import EditProfile from '../screens/EditProfile/EditProfile';
 // import MessageScreen from './MessageScreen';
 
 const Stack = createNativeStackNavigator();
@@ -20,7 +20,7 @@ const AppStack = () => {
       {/* <Stack.Screen name="Login" component={Login} /> */}
       <Stack.Screen name="BottomTab" component={BottomTab} />
       {/* <Stack.Screen name="MessageScreen" component={MessageScreen/} /> */}
-      {/* <Stack.Screen name="EditProfile" component={EditProfile} /> */}
+      <Stack.Screen name="EditProfile" component={EditProfile} />
       {/* <Stack.Screen name="Comment" component={Comment} /> */}
       {/* <Stack.Screen
         name="Story"

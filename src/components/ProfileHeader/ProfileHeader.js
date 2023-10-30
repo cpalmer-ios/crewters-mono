@@ -1,13 +1,16 @@
 import React, {useContext, useEffect, useState} from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Alert, Image, StyleSheet, Text, View} from 'react-native';
 import {AuthContext} from '../../navigation/AuthProvider.ios';
-
+import firestore from '@react-native-firebase/firestore';
 // import { getPosts } from '../../utils/posts/posts';
 
-const ProfileHeader = ({route, posts}) => {
+const ProfileHeader = ({route }) => {
 
   const {user, setUser} = useContext(AuthContext);
   const [userData, setUserData] = useState(null);
+  const [posts, setPosts] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [deleted, setDeleted] = useState(false);
 
   const getUser = async () => {
     await firestore()
@@ -22,10 +25,7 @@ const ProfileHeader = ({route, posts}) => {
       });
   };
 
-  useEffect(() => {
-    getUser();
-  }, []);
-
+  
   return (
     <View style={styles.container3}>
       <View>
@@ -37,9 +37,9 @@ const ProfileHeader = ({route, posts}) => {
 
       <View style={styles.numbers}>
         <View style={styles.left}>
-          {/* <Text style={styles.numberContainer}>{posts && posts.filter((item) => item.userid === user?.sub).length}</Text> */}
-          <Text>{posts.count}</Text>
-          <Text style={styles.text}>Post</Text>
+          <Text style={styles.numberContainer}>{posts && posts.filter((item) => item.userId === user?.uid).length}</Text>
+          
+          <Text style={styles.text}>Posts</Text>
         </View>
 
         <View style={styles.mid}>

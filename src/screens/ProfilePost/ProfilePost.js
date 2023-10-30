@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Image, View, ScrollView, TouchableOpacity } from "react-native";
+import { Image, FlatList, View, ScrollView, TouchableOpacity } from "react-native";
 import { AuthContext } from "../../navigation/AuthProvider.ios";
-
+import PostCard from '../../components/PostCard';
 import firestore from '@react-native-firebase/firestore';
 
 const ProfilePost = ({ navigation }) => { 
@@ -65,6 +65,10 @@ const ProfilePost = ({ navigation }) => {
     setDeleted(false);
   }, [deleted]);
 
+  const ListHeader = () => {
+    return null;
+  };
+
 
   return (
     <ScrollView style={{ backgroundColor: "black" }}>
@@ -76,7 +80,7 @@ const ProfilePost = ({ navigation }) => {
           flexWrap: "wrap",
         }}
       >
-        {posts &&
+        {/* {posts &&
           posts.map((post, index) => (
             <TouchableOpacity
               style={{
@@ -99,9 +103,10 @@ const ProfilePost = ({ navigation }) => {
                 }}
               />
             </TouchableOpacity>
-          ))}
+          ))} */}
+ 
       </View>
-    </ScrollView>
+     </ScrollView>
   );
 };
 export default ProfilePost;
