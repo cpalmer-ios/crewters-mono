@@ -22,7 +22,7 @@ import ProgressiveImage from './ProgressiveImage';
 import {AuthContext} from '../navigation/AuthProvider.ios';
 
 import moment from 'moment';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+// import {TouchableOpacity} from 'react-native-gesture-handler';
 import firestore from '@react-native-firebase/firestore';
 
 const PostCard = ({item, onDelete, onPress}) => {
@@ -77,12 +77,12 @@ const PostCard = ({item, onDelete, onPress}) => {
           }}
         />
         <UserInfoText>
-          <TouchableOpacity onPress={onPress}>
+          {/* <TouchableOpacity onPress={onPress}> */}
             <UserName>
               {userData ? userData.fname || 'Test' : 'Test'}{' '}
               {userData ? userData.lname || 'User' : 'User'}
             </UserName>
-          </TouchableOpacity>
+          {/* </TouchableOpacity> */}
           <PostTime>{moment(item.postTime.toDate()).fromNow()}</PostTime>
         </UserInfoText>
       </UserInfo>

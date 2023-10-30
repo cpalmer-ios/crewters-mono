@@ -8,11 +8,10 @@ import {
   ScrollView,
   SafeAreaView,
 } from 'react-native';
-import FormButton from '../components/FormButton';
-import {AuthContext} from '../navigation/AuthProvider';
+
+import {AuthContext} from '../../navigation/AuthProvider';
 
 import firestore from '@react-native-firebase/firestore';
-import PostCard from '../components/PostCard';
 
 const ProfileScreen = ({navigation, route}) => {
   const {user, logout} = useContext(AuthContext);
@@ -48,7 +47,7 @@ const ProfileScreen = ({navigation, route}) => {
               userId,
               userName: 'Test Name',
               userImg:
-                'https://lh5.googleusercontent.com/-b0PKyNuQv5s/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclxAM4M1SCBGAO7Rp-QP6zgBEUkOQ/s96-c/photo.jpg',
+                user.userImg ? user.userImg : 'https://lh5.googleusercontent.com/-b0PKyNuQv5s/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclxAM4M1SCBGAO7Rp-QP6zgBEUkOQ/s96-c/photo.jpg',
               postTime: postTime,
               post,
               postImg,
@@ -100,7 +99,7 @@ const ProfileScreen = ({navigation, route}) => {
         showsVerticalScrollIndicator={false}>
         <Image
           style={styles.userImg}
-          source={{uri: userData ? userData.userImg || 'https://lh5.googleusercontent.com/-b0PKyNuQv5s/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclxAM4M1SCBGAO7Rp-QP6zgBEUkOQ/s96-c/photo.jpg' : 'https://lh5.googleusercontent.com/-b0PKyNuQv5s/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclxAM4M1SCBGAO7Rp-QP6zgBEUkOQ/s96-c/photo.jpg'}}
+          source={{uri: userData ? userData.userImg : 'https://lh5.googleusercontent.com/-b0PKyNuQv5s/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclxAM4M1SCBGAO7Rp-QP6zgBEUkOQ/s96-c/photo.jpg'}}
         />
         <Text style={styles.userName}>{userData ? userData.fname || 'Test' : 'Test'} {userData ? userData.lname || 'User' : 'User'}</Text>
         {/* <Text>{route.params ? route.params.userId : user.uid}</Text> */}
@@ -124,7 +123,7 @@ const ProfileScreen = ({navigation, route}) => {
                 onPress={() => {
                   navigation.navigate('EditProfile');
                 }}>
-                <Text style={styles.userBtnTxt}>Edit</Text>
+                <Text style={styles.userBtnTxt}>Edit Profile</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.userBtn} onPress={() => logout()}>
                 <Text style={styles.userBtnTxt}>Logout</Text>
@@ -147,10 +146,36 @@ const ProfileScreen = ({navigation, route}) => {
             <Text style={styles.userInfoSubTitle}>Following</Text>
           </View>
         </View>
-
+        <View
+        style={{
+          flex: 1,
+          backgroundColor: "black",
+          flexDirection: "row",
+          flexWrap: "wrap",
+        }}
+      >
         {posts.map((item) => (
-          <PostCard key={item.id} item={item} onDelete={handleDelete} />
+          // <PostCard key={item.id} item={item} onDelete={handleDelete} />
+
+          <TouchableOpacity
+              style={{
+                width: "33%",
+                height: 135,                
+              }}
+              onPress={() => navigation.navigate("SinglePost", {
+                singlePost: post && post
+              })}
+            >
+              <Image
+                source={{ uri: 'https://lh5.googleusercontent.com/-b0PKyNuQv5s/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclxAM4M1SCBGAO7Rp-QP6zgBEUkOQ/s96-c/photo.jpg' }}
+                style={{
+                  width: "100%",
+                  height: 135,  
+                }}
+              />
+            </TouchableOpacity>
         ))}
+         </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -189,15 +214,16 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   userBtn: {
-    borderColor: '#2e64e5',
+    borderColor: '#244c66',
     borderWidth: 2,
     borderRadius: 3,
     paddingVertical: 8,
     paddingHorizontal: 12,
     marginHorizontal: 5,
+    backgroundColor: '#244c66'
   },
   userBtnTxt: {
-    color: '#2e64e5',
+    color: '#FFF',
   },
   userInfoWrapper: {
     flexDirection: 'row',

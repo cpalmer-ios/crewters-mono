@@ -185,8 +185,8 @@ const EditProfileScreen = () => {
     </View>
   );
 
-  bs = React.createRef();
-  fall = new Animated.Value(1);
+  // bs = React.createRef();
+  // fall = new Animated.Value(1);
 
   return (
     <View style={styles.container}>
