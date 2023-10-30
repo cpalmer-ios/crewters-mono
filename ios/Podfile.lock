@@ -1638,14 +1638,14 @@ SPEC CHECKSUMS:
   React-Core: aaacca67f9ca54f142827e67f44bfbd815875eb6
   React-CoreModules: 32fab1d62416849a3b6dac6feff9d54e5ddc2d1e
   React-cxxreact: 37765b4975541105b2a3322a4b473417c158c869
-  React-debug: 69562c37480733bb69c542e5d03537df520dd5a1
+  React-debug: fedc0493510a0a58c3c13cb83a7d8772dae40352
   React-hermes: 935ae71fb3d7654e947beba8498835cd5e479707
   React-jsi: ec628dc7a15ffea969f237b0ea6d2fde212b19dd
   React-jsiexecutor: 59d1eb03af7d30b7d66589c410f13151271e8006
   React-jsinspector: b511447170f561157547bc0bef3f169663860be7
   React-logger: c5b527272d5f22eaa09bb3c3a690fee8f237ae95
   react-native-safe-area-context: 2cd91d532de12acdb0a9cbc8d43ac72a8e4c897c
-  React-NativeModulesApple: 3519713f8383add133985d228ece80dcd0dc3f6f
+  React-NativeModulesApple: b1e603e9cd7c88c386c77ec6026a514c0b4e42d7
   React-perflogger: 6bd153e776e6beed54c56b0847e1220a3ff92ba5
   React-RCTActionSheet: c0b62af44e610e69d9a2049a682f5dba4e9dff17
   React-RCTAnimation: fe7005136b58f58871cab2f70732343b6e330d30
@@ -1659,9 +1659,9 @@ SPEC CHECKSUMS:
   React-RCTVibration: ea3a68a49873a54ced927c90923fc6932baf344a
   React-rncore: 9672a017af4a7da7495d911f0b690cbcae9dd18d
   React-runtimeexecutor: 369ae9bb3f83b65201c0c8f7d50b72280b5a1dbc
-  React-runtimescheduler: d9d7162b7ef519758c40c255bf82b69576701b44
-  React-utils: cacd9bca78c3050e50f89d45ede13cd37fc1ce33
-  ReactCommon: 5c02c6055d496f39065a42e580cd53b110a86ed6
+  React-runtimescheduler: 469d341394ca5aa7083a3b7f9828878f2840bbed
+  React-utils: e0f4fd794f2427b0942c182d9532af3f7b639bd8
+  ReactCommon: daeea27c121e9fb7bbf0d9d3b175b3008e3c8abc
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
   RNAppleAuthentication: 0571c08da8c327ae2afc0261b48b4a515b0286a6
   RNCAsyncStorage: c913ede1fa163a71cea118ed4670bbaaa4b511bb
