@@ -78,8 +78,6 @@ const AccountScreen = ({navigation, route}) => {
     }
   };
 
-  console.log(posts) 
-
   const getUser = async() => {
     await firestore()
     .collection('users')

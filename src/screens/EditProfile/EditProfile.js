@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useRef, useState } from "react";
+import React, { useCallback, useContext, useEffect, useRef, useState } from "react";
 import {
   Image,
   Linking,
@@ -72,6 +72,25 @@ const ProfilEdit = () => {
     }
   };
 
+  const getUser = async() => {
+    await firestore()
+    .collection('users')
+    .doc(user.uid)
+    .get()
+    .then((documentSnapshot) => {
+      if( documentSnapshot.exists ) {
+        console.log('User Data', documentSnapshot.data());
+        setUserData(documentSnapshot.data());
+      }
+    })
+  }
+
+  useEffect(() => {
+    getUser();
+    console.log(user)
+  }, []);
+
+
   return (
     <SafeAreaView style={styles.body}>
       <View style={{ margin: 10 }}>
@@ -103,17 +122,11 @@ const ProfilEdit = () => {
         <View style={styles.profile}>
           <Image
             style={styles.image}
-            source={
-              pickerResponse
-                ? {
-                    uri:
-                      "data:" +
-                      pickerResponse.mime +
-                      ";base64," +
-                      pickerResponse.data,
-                  }
-                : { uri: user && user.picture }
-            }
+
+            source={{ uri: pickerResponse !== null ? "data:" +
+            pickerResponse.mime +
+            ";base64," +
+            pickerResponse.data : user.photoURL }}
           />
 
           <TouchableOpacity onPress={() => bottomSheet.current.show()}>
