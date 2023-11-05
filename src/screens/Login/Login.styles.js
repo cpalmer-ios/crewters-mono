@@ -92,6 +92,7 @@ export default StyleSheet.create({
   },
   bottomContainer: {
     justifyContent: 'flex-end',
-    height: '22%',
+    height: '10%',
+    marginTop: 70,
   },
 });

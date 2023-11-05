@@ -80,7 +80,7 @@ const ProfilePost = ({ navigation }) => {
           flexWrap: "wrap",
         }}
       >
-        {/* {posts &&
+        {posts &&
           posts.map((post, index) => (
             <TouchableOpacity
               style={{
@@ -94,7 +94,8 @@ const ProfilePost = ({ navigation }) => {
               })}
             >
               <Image
-                source={{ uri: post.postImg}}
+                source={{ uri: 'https://lh5.googleusercontent.com/-b0PKyNuQv5s/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclxAM4M1SCBGAO7Rp-QP6zgBEUkOQ/s96-c/photo.jpg'}}
+                // source={{ uri: post.postImg}}
                 style={{
                   width: "100%",
                   height: 135,
@@ -103,7 +104,7 @@ const ProfilePost = ({ navigation }) => {
                 }}
               />
             </TouchableOpacity>
-          ))} */}
+          ))}
  
       </View>
      </ScrollView>

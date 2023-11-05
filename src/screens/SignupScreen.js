@@ -43,6 +43,7 @@ const SignupScreen = ({navigation}) => {
       />
 
       <FormButton
+        style={{backgroundColor: '#244c66', padding: 15, width: 350, alignItems: 'center'}}
         buttonTitle="Sign Up"
         onPress={() => register(email, password)}
       />
@@ -52,12 +53,12 @@ const SignupScreen = ({navigation}) => {
           By registering, you confirm that you accept our{' '}
         </Text>
         <TouchableOpacity onPress={() => alert('Terms Clicked!')}>
-          <Text style={[styles.color_textPrivate, {color: '#e88832'}]}>
+          <Text style={[styles.color_textPrivate, {color: '#244c66'}]}>
             Terms of service
           </Text>
         </TouchableOpacity>
         <Text style={styles.color_textPrivate}> and </Text>
-        <Text style={[styles.color_textPrivate, {color: '#e88832'}]}>
+        <Text style={[styles.color_textPrivate, {color: '#244c66'}]}>
           Privacy Policy
         </Text>
       </View>
@@ -105,7 +106,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Kufam-SemiBoldItalic',
     fontSize: 28,
     marginBottom: 10,
-    color: '#051d5f',
+    color: '#244c66',
   },
   navButton: {
     marginTop: 15,
@@ -113,7 +114,7 @@ const styles = StyleSheet.create({
   navButtonText: {
     fontSize: 18,
     fontWeight: '500',
-    color: '#2e64e5',
+    color: '#244c66',
     fontFamily: 'Lato-Regular',
   },
   textPrivate: {

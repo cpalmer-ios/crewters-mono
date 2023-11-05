@@ -1,12 +1,9 @@
-import React, {useContext, useEffect, useState} from 'react';
-import {Alert, Image, StyleSheet, Text, View} from 'react-native';
-import {AuthContext} from '../../navigation/AuthProvider.ios';
-import firestore from '@react-native-firebase/firestore';
-// import { getPosts } from '../../utils/posts/posts';
+import React, { useContext, useEffect, useState } from "react";
+import { Alert, Image, StyleSheet, Text, View } from "react-native";
+import { AuthContext } from "../../navigation/AuthProvider.ios";
+import firestore from "@react-native-firebase/firestore";
 
-const ProfileHeader = ({route }) => {
-
-  const {user, setUser} = useContext(AuthContext);
+const ProfileHeader = ({ route, user }) => { 
   const [userData, setUserData] = useState(null);
   const [posts, setPosts] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -14,31 +11,85 @@ const ProfileHeader = ({route }) => {
 
   const getUser = async () => {
     await firestore()
-      .collection('users')
-      .doc(item.userId)
+      .collection("users")
+      .doc(user.userId)
       .get()
       .then((documentSnapshot) => {
         if (documentSnapshot.exists) {
-          console.log('User Data', documentSnapshot.data());
+          console.log("User Data", documentSnapshot.data());
           setUserData(documentSnapshot.data());
         }
       });
   };
 
-  
+  const fetchPosts = async () => {
+    try {
+      const list = [];
+      await firestore()
+        .collection('posts')
+        .where('userId', '==', user.userId)
+        .orderBy('postTime', 'desc')
+        .get()
+        .then((querySnapshot) => {
+          // console.log('Total Posts: ', querySnapshot.size);
+
+          querySnapshot.forEach((doc) => {
+            const {
+              userId,
+              post,
+              postImg,
+              postTime,
+              likes,
+              comments,
+            } = doc.data();
+            list.push({
+              id: doc.id,
+              userId,
+              userName: 'Test Name',
+              userImg:
+                user.photoURL ? user.photoURL : 'https://lh5.googleusercontent.com/-b0PKyNuQv5s/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclxAM4M1SCBGAO7Rp-QP6zgBEUkOQ/s96-c/photo.jpg',
+              postTime: postTime,
+              post,
+              postImg,
+              liked: false,
+              likes,
+              comments,
+            });
+          });
+        });
+
+      setPosts(list);
+
+      if (loading) {
+        setLoading(false);
+      }
+
+      console.log('Posts: ', posts);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  useEffect(() => {
+    getUser();
+    fetchPosts();
+  }, []);
+
   return (
     <View style={styles.container3}>
       <View>
         <Image
-          source={{uri: "https://res.cloudinary.com/dpgcorswb/image/upload/v1696707165/crewters-fb_y2uzg8.png"}}
+          source={{ uri: user ? user.photoURL : "" }}
           style={styles.image3}
         />
       </View>
 
       <View style={styles.numbers}>
         <View style={styles.left}>
-          <Text style={styles.numberContainer}>{posts && posts.filter((item) => item.userId === user?.uid).length}</Text>
-          
+          <Text style={styles.numberContainer}>
+            {posts && posts?.length}
+          </Text>
+
           <Text style={styles.text}>Posts</Text>
         </View>
 
@@ -58,8 +109,8 @@ const ProfileHeader = ({route }) => {
 
 const styles = StyleSheet.create({
   container3: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
     marginTop: 20,
     marginHorizontal: 10,
   },
@@ -71,24 +122,24 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   numbers: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    width: '73%',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-around",
+    width: "73%",
+    alignItems: "center",
     marginHorizontal: 5,
   },
   numberContainer: {
-    color: 'white',
-    fontWeight: 'bold',
-    alignSelf: 'center',
+    color: "white",
+    fontWeight: "bold",
+    alignSelf: "center",
     fontSize: 18,
     marginBottom: 5,
   },
 
   text: {
-    color: 'white',
+    color: "white",
     fontSize: 16,
-    alignSelf: 'center',
+    alignSelf: "center",
   },
 });
 export default ProfileHeader;

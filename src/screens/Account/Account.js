@@ -9,7 +9,7 @@ import {
   SafeAreaView,
 } from 'react-native';
 
-import {AuthContext} from '../../navigation/AuthProvider';
+import {AuthContext} from '../../navigation/AuthProvider.ios';
 import firestore from '@react-native-firebase/firestore';
 
 import Container from '../../components/Container/Container';
@@ -22,6 +22,7 @@ import TopTabNavigator from '../../navigation/TopTabNavigator';
 
 
 const AccountScreen = ({navigation, route}) => {
+
   const {user, logout} = useContext(AuthContext);
 
   const [posts, setPosts] = useState([]);
@@ -32,7 +33,6 @@ const AccountScreen = ({navigation, route}) => {
   const fetchPosts = async () => {
     try {
       const list = [];
-
       await firestore()
         .collection('posts')
         .where('userId', '==', route.params ? route.params.userId : user.uid)
@@ -78,6 +78,8 @@ const AccountScreen = ({navigation, route}) => {
     }
   };
 
+  console.log(posts) 
+
   const getUser = async() => {
     await firestore()
     .collection('users')
@@ -94,7 +96,8 @@ const AccountScreen = ({navigation, route}) => {
   useEffect(() => {
     getUser();
     fetchPosts();
-    navigation.addListener("focus", () => setLoading(!loading));
+    console.log(posts) 
+    // navigation.addListener("focus", () => setLoading(!loading));
   }, [navigation, loading]);
 
   const handleDelete = () => {};
@@ -102,7 +105,7 @@ const AccountScreen = ({navigation, route}) => {
   return (
     <Container insets={{top: true, right: true, bottom: true}}>
       <ProfileBar/>
-      <ProfileHeader posts={posts} route={route.params} />
+      <ProfileHeader user={userData} posts={posts} route={route.params} />
       <Bio route={route.params} user={user && user} />
       <Highlights />
       <TopTabNavigator />

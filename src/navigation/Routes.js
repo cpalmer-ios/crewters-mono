@@ -1,13 +1,13 @@
-import React, {useContext, useState, useEffect} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import auth from '@react-native-firebase/auth';
-import {AuthContext} from './AuthProvider.ios';
-
-import AuthStack from './AuthStack.ios';
-import AppStack from './AppStack';
+import React, { useContext, useState, useEffect } from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import auth from "@react-native-firebase/auth";
+import { AuthContext } from "./AuthProvider.ios";
+import { NativeBaseProvider, Box } from "native-base";
+import AuthStack from "./AuthStack.ios";
+import AppStack from "./AppStack";
 
 const Routes = () => {
-  const {user, setUser} = useContext(AuthContext);
+  const { user, setUser } = useContext(AuthContext);
   const [initializing, setInitializing] = useState(true);
 
   const onAuthStateChanged = (user) => {
@@ -24,7 +24,9 @@ const Routes = () => {
 
   return (
     <NavigationContainer>
-      {user ? <AppStack /> : <AuthStack />}
+      <NativeBaseProvider>
+        {user ? <AppStack /> : <AuthStack />}
+      </NativeBaseProvider>
     </NavigationContainer>
   );
 };

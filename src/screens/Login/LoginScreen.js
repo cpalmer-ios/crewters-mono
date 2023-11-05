@@ -97,7 +97,7 @@ const LoginScreen = ({ navigation }) => {
                 alignItems: 'center',
                 width: 350,
                 height: 45,
-                backgroundColor: '#000',
+                backgroundColor: '#244c66',
                 paddingTop: 10,
                 borderRadius: 5,
                 textColor: '#000'
@@ -105,7 +105,7 @@ const LoginScreen = ({ navigation }) => {
               buttonTitle="Log In"
               onPress={() => login(email, password)}
             />
-
+          <Text style={{marginVertical: 15, color: '#FFF'}}>OR</Text>
             {Platform.OS === "android" ? (
               <View>
                 <SocialButton

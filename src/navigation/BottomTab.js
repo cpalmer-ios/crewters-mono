@@ -12,8 +12,10 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import AccountScreen from '../navigation/AccountScreen';
 import HomeScreen from '../screens/HomeScreen';
+import Host from '../screens/Host/Host';
 // import StoreScreen from './StoreScreen';
 import {AuthContext} from '../navigation/AuthProvider.ios';
+import { CalScreen } from '../screens/CalScreen/CalScreen';
 
 
 const Tab = createBottomTabNavigator();
@@ -43,7 +45,7 @@ const BottomTab = () => {
               <Feather name="map-pin" size={28} color="white" />
               );
             }
-          if (route.name === 'Discover') {
+          if (route.name === 'Calendar') {
             return focused ? (
               <FontAwesome name="calendar-alt" size={28} color="white" />
               ) : (
@@ -67,9 +69,9 @@ const BottomTab = () => {
         headerShown: false,
       })}>
       <Tab.Screen name="HomeScreen" component={HomeScreen} />
-      {/* <Tab.Screen name="Search" component={Search} /> */}
-      {/* <Tab.Screen name="Discover" component={Discover} /> */}
-      {/* <Tab.Screen name="StoreScreen" component={StoreScreen} /> */}
+      <Tab.Screen name="Search" component={Host} />
+      <Tab.Screen name="Calendar" component={CalScreen} />
+      {/* <Tab.Screen name="StoreScreen" component={CalScreen} /> */}
       <Tab.Screen name="AccountScreen" component={AccountScreen} />
     </Tab.Navigator>
   );

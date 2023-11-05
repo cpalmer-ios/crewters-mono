@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<string>en</string>
 	<key>CFBundleDisplayName</key>
 	<string>crewters</string>
 	<key>CFBundleExecutable</key>
@@ -36,6 +36,32 @@
 			</array>
 		</dict>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>res.cloudinary.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+			<key>localhost</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+			<key>s.gravatar.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+			<key>witty-belt-calf.cyclic.cloud</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -46,13 +72,45 @@
 		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>res.cloudinary.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
 			<key>localhost</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+			<key>witty-belt-calf.cyclic.cloud</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
 			</dict>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Crewters would like to access your camera</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Read heart rate monitor data.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Share workout data with other apps.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Location Permission</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Location Permission</string>
+	<key>NSLocationUsageDescription</key>
+	<string>GPS data is required to...</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Locatoin Permission</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Crewters would like to access your microphone</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Crewters would like to access your photos</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>bree-serif-v17-latin-regular.otf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>SplashScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>

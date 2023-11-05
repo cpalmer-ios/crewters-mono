@@ -9,9 +9,10 @@ const Bio = ({route, user}) => {
   return (
     <SafeAreaView>
       <View style={styles.bioContainer}>
-        <Text style={styles.userName}> {route ? route.name : user?.nickname}</Text>
+        <Text style={styles.userName}> {route ? route.name : user?.displayName}</Text>
         <Text style={styles.bio}>
           {/* chosen sport */}
+          {console.log(user)}
           {route ? route.bio : 'Tennis'}
         </Text>
       </View>
