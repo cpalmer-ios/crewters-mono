@@ -21,7 +21,7 @@ const ProfilePost = ({ navigation }) => {
         .orderBy('postTime', 'desc')
         .get()
         .then((querySnapshot) => {
-          console.log('Total Posts: ', querySnapshot.size);
+          // console.log('Total Posts: ', querySnapshot.size);
 
           querySnapshot.forEach((doc) => {
             const {

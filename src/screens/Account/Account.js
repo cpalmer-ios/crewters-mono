@@ -72,7 +72,6 @@ const AccountScreen = ({navigation, route}) => {
         setLoading(false);
       }
 
-      console.log('Posts: ', posts);
     } catch (e) {
       console.log(e);
     }

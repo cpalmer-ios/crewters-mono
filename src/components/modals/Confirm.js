@@ -38,7 +38,7 @@ export const Confirm = ({route, navigation, member}) => {
 
   // console.log(`Steps: ${steps} | Distance: ${distance}m | Flights: ${flights}`);
 
-  console.log(crewter);
+  // console.log(crewter);
 
   const handleDateChange = (e) => {
     setDate(new Date(e.nativeEvent.timestamp));
@@ -63,9 +63,9 @@ export const Confirm = ({route, navigation, member}) => {
       date: date,
       time: dateTime,
       host: {
-        id: user && user?.sub,
-        picture: user?.picture,
-        name: user?.nickname,
+        id: user && user?.uid,
+        picture: user?.photoURL,
+        name: user?.displayName,
       },
       picture: await setImg(category),
     };
@@ -75,22 +75,22 @@ export const Confirm = ({route, navigation, member}) => {
       .then(responseData => {
         const month = moment().month();
 
-        let arr = crewter.gamesPlayed;
+        // let arr = crewter.gamesPlayed;
 
-        arr.splice(month + 1, 0, 1);
+        // arr.splice(month + 1, 0, 1);
 
-        arr.map((item, indx) => {
-          item + crewter.gamesPlayed[indx];
-        });
+        // arr.map((item, indx) => {
+        //   item + crewter.gamesPlayed[indx];
+        // });
 
-        const e = {
-          gamesPlayed: arr,
-        };
+        // const e = {
+        //   gamesPlayed: arr,
+        // };
 
-        let res = updateUser(user && user.sub, e);
+        // let res = updateUser(user && user.uid, e);
 
-        navigation.navigate('profile', {
-          screen: 'profile',
+        navigation.navigate('Account', {
+          screen: 'Account',
           newGame: true,
         });
       });
@@ -235,7 +235,19 @@ export const Confirm = ({route, navigation, member}) => {
               <Picker.Item label="9" value="9" />
               <Picker.Item label="10" value="10" />
               <Picker.Item label="11" value="11" />
-              <Picker.Item label="12+" value="12+" />
+              <Picker.Item label="12" value="12" />
+              <Picker.Item label="13" value="13" />
+              <Picker.Item label="14" value="14" />
+              <Picker.Item label="15" value="15" />
+              <Picker.Item label="16" value="16" />
+              <Picker.Item label="17" value="17" />
+              <Picker.Item label="18" value="18" />
+              <Picker.Item label="19" value="19" />
+              <Picker.Item label="20" value="20" />
+              <Picker.Item label="21" value="21" />
+              <Picker.Item label="22" value="22" />
+              <Picker.Item label="23" value="23" />
+              <Picker.Item label="24" value="24" />
             </Picker>
             <Text
               style={{fontWeight: 'bold', marginTop: 45, marginBottom: -25}}>

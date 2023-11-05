@@ -8,12 +8,12 @@ import {Dimensions, Image, ScrollView,Text,  StyleSheet, View} from 'react-nativ
 
 import Calendar from '../../components/Calendar/Calendar';
 
-// import {searchEventByUserSub} from '../hooks/events/events';
+import {searchEventByUserSub} from '../../hooks/events/events';
 // import {getUserByID} from '../hooks/user';
-// import moment from 'moment';
+import moment from 'moment';
 import { Center } from 'native-base';
 import { AuthContext } from '../../navigation/AuthProvider.ios';
-// import { setImg } from '../hooks/utils/setImg';
+import { setImg } from '../../hooks/utils/setImg';
 
 const chartConfig = {
   backgroundColor: '#FFF',
@@ -36,7 +36,7 @@ export const CalScreen = ({navigation, sport}) => {
 
   useEffect(() => {
     // getUserByID(user, setCrewter);
-    // searchEventByUserSub(user?.sub, setEvents);
+    searchEventByUserSub(user?.uid, setEvents);
     console.log(events)
   }, [user]);
 
