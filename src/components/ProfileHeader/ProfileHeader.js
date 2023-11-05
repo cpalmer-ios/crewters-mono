@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
   },
   numberContainer: {
-    color: "white",
+    color: "#244c66",
     fontWeight: "bold",
     alignSelf: "center",
     fontSize: 18,
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    color: "white",
+    color: "#244c66",
     fontSize: 16,
     alignSelf: "center",
   },

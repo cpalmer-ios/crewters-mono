@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
 export default StyleSheet.create({
   userName: {
-    color: '#D8D8D8',
+    color: '#244c66',
     fontWeight: 'bold',
     marginTop: 3,
     marginBottom: 3,
@@ -9,7 +9,7 @@ export default StyleSheet.create({
     marginLeft: 10,
   },
   bio: {
-    color: '#D8D8D8',
+    color: '#244c66',
     fontSize: 15,
     marginLeft: 12,
     marginTop: 5,
@@ -21,7 +21,7 @@ export default StyleSheet.create({
   edit: {
     height: 35,
     borderRadius: 10,
-    backgroundColor: '#262626',
+    backgroundColor: '#244c66',
     justifyContent: 'center',
     marginVertical: 5,
     marginBottom: 20,
@@ -31,14 +31,14 @@ export default StyleSheet.create({
     width: '82%',
   },
   editText: {
-    color: '#D8D8D8',
+    color: '#FFF',
     fontWeight: 'bold',
     fontSize: 16,
   },
   icon: {
     height: 36,
     borderRadius: 10,
-    backgroundColor: '#262626',
+    backgroundColor: '#244c66',
     width: '10%',
     justifyContent: 'center',
     alignItems: 'center',

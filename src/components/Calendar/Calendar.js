@@ -27,7 +27,7 @@ const Calendar = ({ onSelectDate, selected, events }) => {
   return (
     <>
       <View style={[styles.centered]}>
-        <Text style={styles.title}>Your Calendar</Text>
+        
       </View>
       <View style={styles.dateSection}>
         <View style={[styles.scroll]}>

@@ -2,10 +2,12 @@ import React from 'react';
 import {Image} from 'react-native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import ProfilePost from '../screens/ProfilePost/ProfilePost';
 // import Events from '../screen/Events/Events';
 // import Sports from '../screens/Sports/Sports';
+import {faIdBadge, faImage, faListAlt, faPassport, faPersonMilitaryToPerson, faUser, faUserAlt} from '@fortawesome/free-solid-svg-icons';
+
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -15,19 +17,19 @@ const TopTabNavigator = () => {
       screenOptions={({route}) => ({
         tabBarIcon: () => {
           if (route.name === 'ProfilPost') {
-            return <Image source={require('../../assets/images/grid.png')} />;
+            return (<FontAwesomeIcon size={28} color='#244c66' icon={faImage} />);
           }
           if (route.name === 'ProfileEvents') {
-            return <Image source={require('../../assets/images/avatar.png')} />;
+            return <FontAwesomeIcon size={28} color='#244c66' icon={faListAlt} />;
           }
           if (route.name === 'ProfileSports') {
-            return <Image source={require('../../assets/images/invite.png')} />;
+            return <FontAwesomeIcon size={28} color='#244c66' icon={faIdBadge} />;
           }
         },
-        tabBarIndicatorStyle: {backgroundColor: 'white', height: 2},
+        tabBarIndicatorStyle: {backgroundColor: '#244c66', height: 2},
         tabBarLabel: '',
         tabBarStyle: {
-          backgroundColor: 'black',
+          backgroundColor: 'white',
         },
       })}>
       <Tab.Screen name="ProfilPost" component={ProfilePost} />

@@ -29,7 +29,7 @@ const ProfileBar = () => {
     <SafeAreaView style={styles.body}>
       <View style={styles.left}>
         <TouchableOpacity style={styles.touch} onPress={() => logout()}>
-          <MaterialIcons name="logout" size={28} style={{marginLeft: -30, transform: [{rotate: '180deg'}]}} color="white" />
+          <MaterialIcons name="logout" size={28} style={{marginLeft: -30, transform: [{rotate: '180deg'}]}} color="#244c66" />
         </TouchableOpacity>
       </View>
       <View style={styles.right}>
@@ -38,7 +38,7 @@ const ProfileBar = () => {
           hasDraggableIcon
           ref={bottomSheet}
           height={400}
-          sheetBackgroundColor="#262626"
+          sheetBackgroundColor="#e1e1e1"
         >
           <View style={{ marginTop: 15, marginLeft: 5 }}>
             <TouchableOpacity
@@ -48,7 +48,7 @@ const ProfileBar = () => {
                 bottomSheet.current.close();
               }}
             >
-              <Ionicons name="settings-sharp" size={28} color="white" />
+              <Ionicons name="settings-sharp" size={28} color="#244c66" />
               <Text style={styles.label}>Settings</Text>
             </TouchableOpacity>
 
@@ -97,7 +97,7 @@ const ProfileBar = () => {
         </BottomSheet>
 
         <TouchableOpacity onPress={() => bottomSheet.current.show()}>
-          <FontAwesome name="bars" size={28} color="white" />
+          <FontAwesome name="bars" size={28} color="#244c66" />
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -146,19 +146,19 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   sheet: {
-    backgroundColor: "#262626",
+    backgroundColor: "#e1e1e1",
     margin: 10,
     flexDirection: "row",
     alignItems: "center",
   },
   sheet2: {
-    backgroundColor: "#262626",
+    backgroundColor: "#e1e1e1",
     marginBottom: 30,
     flexDirection: "row",
     alignItems: "center",
   },
   label: {
-    color: "white",
+    color: "#244c66",
     fontSize: 18,
     fontWeight: "500",
     paddingLeft: 15,

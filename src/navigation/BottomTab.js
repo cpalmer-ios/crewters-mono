@@ -30,30 +30,27 @@ const BottomTab = () => {
         tabBarIcon: ({focused}) => {
           if (route.name === 'HomeScreen') {
             return focused ? (
-              <Foundation name="home" size={32} color="white" />
+              <FontAwesome name="home" size={32} color="#244c66" />
             ) : (
-              <Image
-                source={require('../../assets/images/home.png')}
-                style={{width: 25, height: 25}}
-              />
+              <Feather name="home" size={28} color="#244c66" />
             );
           }
-          if (route.name === 'Search') {
+          if (route.name === 'Host') {
               return focused ? (
-            <FontAwesome name="map-marker-alt" size={28} color="white" />
+            <FontAwesome name="map-marker-alt" size={28} color="#244c66" />
             ) : (
-              <Feather name="map-pin" size={28} color="white" />
+              <Feather name="map-pin" size={28} color="#244c66" />
               );
             }
           if (route.name === 'Calendar') {
             return focused ? (
-              <FontAwesome name="calendar-alt" size={28} color="white" />
+              <FontAwesome name="calendar-alt" size={28} color="#244c66" />
               ) : (
-              <Feather name="calendar" size={28} color="white" />
+              <Feather name="calendar" size={28} color="#244c66" />
             )
           }
-          if (route.name === 'StoreScreen') {
-            return <Feather name="search" size={28} color="white" />;
+          if (route.name === 'Search') {
+            return <Feather name="search" size={28} color="#244c66" />;
           }
           if (route.name === 'AccountScreen') {
             return (
@@ -64,14 +61,14 @@ const BottomTab = () => {
             );
           }
         },
-        tabBarStyle: {backgroundColor: 'black'},
+        tabBarStyle: {backgroundColor: 'white'},
         tabBarShowLabel: false,
         headerShown: false,
       })}>
       <Tab.Screen name="HomeScreen" component={HomeScreen} />
-      <Tab.Screen name="Search" component={Host} />
+      <Tab.Screen name="Host" component={Host} />
       <Tab.Screen name="Calendar" component={CalScreen} />
-      {/* <Tab.Screen name="StoreScreen" component={CalScreen} /> */}
+      {/* <Tab.Screen name="Search" component={CalScreen} /> */}
       <Tab.Screen name="AccountScreen" component={AccountScreen} />
     </Tab.Navigator>
   );

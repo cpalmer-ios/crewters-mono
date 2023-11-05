@@ -12,7 +12,7 @@ const Container = ({insets, children}) => {
         paddingLeft: insets?.left ? left : undefined,
         paddingRight: insets?.right ? right : undefined,
         flex: 1,
-        backgroundColor: 'black',
+        backgroundColor: 'white',
       }}>
       {children}
     </View>

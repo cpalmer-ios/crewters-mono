@@ -71,11 +71,11 @@ const ProfilePost = ({ navigation }) => {
 
 
   return (
-    <ScrollView style={{ backgroundColor: "black" }}>
+    <ScrollView style={{ backgroundColor: "white" }}>
       <View
         style={{
           flex: 1,
-          backgroundColor: "black",
+          backgroundColor: "white",
           flexDirection: "row",
           flexWrap: "wrap",
         }}
