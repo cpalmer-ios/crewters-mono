@@ -85,7 +85,7 @@ const AccountScreen = ({navigation, route}) => {
     .get()
     .then((documentSnapshot) => {
       if( documentSnapshot.exists ) {
-        console.log('User Data', documentSnapshot.data());
+        // console.log('User Data', documentSnapshot.data());
         setUserData(documentSnapshot.data());
       }
     })
@@ -94,7 +94,6 @@ const AccountScreen = ({navigation, route}) => {
   useEffect(() => {
     getUser();
     fetchPosts();
-    console.log(posts) 
     // navigation.addListener("focus", () => setLoading(!loading));
   }, [navigation, loading]);
 
@@ -103,7 +102,7 @@ const AccountScreen = ({navigation, route}) => {
   return (
     <Container insets={{top: true, right: true, bottom: true}}>
       <ProfileBar/>
-      <ProfileHeader user={userData} posts={posts} route={route.params} />
+      <ProfileHeader user={userData && userData} posts={posts && posts} route={route.params} />
       <Bio route={route.params} user={user && user} />
       <Highlights />
       <TopTabNavigator />

@@ -3,9 +3,8 @@ import { Alert, Image, StyleSheet, Text, View } from "react-native";
 import { AuthContext } from "../../navigation/AuthProvider.ios";
 import firestore from "@react-native-firebase/firestore";
 
-const ProfileHeader = ({ route, user }) => { 
+const ProfileHeader = ({ route, user, posts }) => { 
   const [userData, setUserData] = useState(null);
-  const [posts, setPosts] = useState(null);
   const [loading, setLoading] = useState(true);
   const [deleted, setDeleted] = useState(false);
 

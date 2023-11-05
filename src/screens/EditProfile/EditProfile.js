@@ -56,6 +56,7 @@ const ProfilEdit = () => {
         .collection("users")
         .doc(user.uid)
         .set({
+          displayName: name,
           photoURL:
             "data:" + pickerResponse.mime + ";base64," + pickerResponse.data,
         })
