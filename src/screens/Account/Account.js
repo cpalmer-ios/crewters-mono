@@ -94,7 +94,7 @@ const AccountScreen = ({navigation, route}) => {
   useEffect(() => {
     getUser();
     fetchPosts();
-    // navigation.addListener("focus", () => setLoading(!loading));
+    navigation.addListener("focus", () => setLoading(!loading));
   }, [navigation, loading]);
 
   const handleDelete = () => {};
@@ -103,7 +103,7 @@ const AccountScreen = ({navigation, route}) => {
     <Container insets={{top: true, right: true, bottom: true}}>
       <ProfileBar/>
       <ProfileHeader user={userData && userData} posts={posts && posts} route={route.params} />
-      <Bio route={route.params} user={user && user} />
+      <Bio route={route.params} user={userData && userData} />
       <Highlights />
       <TopTabNavigator />
     </Container>

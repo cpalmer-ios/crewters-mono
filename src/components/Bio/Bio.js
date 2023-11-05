@@ -9,10 +9,9 @@ const Bio = ({route, user}) => {
   return (
     <SafeAreaView>
       <View style={styles.bioContainer}>
-        <Text style={styles.userName}> {route ? route.name : user?.displayName}</Text>
+        <Text style={styles.userName}> {user && user?.displayName}</Text>
         <Text style={styles.bio}>
           {/* chosen sport */}
-          {console.log(user)}
           {route ? route.bio : 'Tennis'}
         </Text>
       </View>
@@ -33,8 +32,8 @@ const Bio = ({route, user}) => {
 
         <View style={styles.icon}>
           <Image
-            source={require('../../../assets/images/invite.png')}
-            style={{width: 16, height: 16}}
+            source={require('../../../assets/images/heart.png')}
+            style={{width: 18, height: 18}}
           />
         </View>
       </View>
