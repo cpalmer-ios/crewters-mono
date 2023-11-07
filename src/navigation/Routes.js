@@ -5,6 +5,9 @@ import { AuthContext } from "./AuthProvider.ios";
 import { NativeBaseProvider, Box } from "native-base";
 import AuthStack from "./AuthStack.ios";
 import AppStack from "./AppStack";
+import {ApplicationProvider, Layout, Text} from '@ui-kitten/components';
+import * as eva from '@eva-design/eva';
+import {default as themed} from '../../theme.json';
 
 const Routes = () => {
   const { user, setUser } = useContext(AuthContext);
@@ -24,9 +27,11 @@ const Routes = () => {
 
   return (
     <NavigationContainer>
+      <ApplicationProvider {...eva} theme={{ ...eva.light, ...themed }}>
       <NativeBaseProvider>
         {user ? <AppStack /> : <AuthStack />}
       </NativeBaseProvider>
+      </ApplicationProvider>
     </NavigationContainer>
   );
 };

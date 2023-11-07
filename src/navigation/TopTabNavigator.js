@@ -1,12 +1,11 @@
 import React from 'react';
-import {Image} from 'react-native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import ProfilePost from '../screens/ProfilePost/ProfilePost';
 // import Events from '../screen/Events/Events';
 // import Sports from '../screens/Sports/Sports';
-import {faIdBadge, faImage, faListAlt, faPassport, faPersonMilitaryToPerson, faUser, faUserAlt} from '@fortawesome/free-solid-svg-icons';
+import { faBarChart, faImages, faLocation} from '@fortawesome/free-solid-svg-icons';
 
 
 const Tab = createMaterialTopTabNavigator();
@@ -17,13 +16,13 @@ const TopTabNavigator = () => {
       screenOptions={({route}) => ({
         tabBarIcon: () => {
           if (route.name === 'ProfilPost') {
-            return (<FontAwesomeIcon size={28} color='#244c66' icon={faImage} />);
+            return (<FontAwesomeIcon size={28} color='#244c66' icon={faImages} />);
           }
           if (route.name === 'ProfileEvents') {
-            return <FontAwesomeIcon size={28} color='#244c66' icon={faListAlt} />;
+            return <FontAwesomeIcon size={28} color='#244c66' icon={faLocation} />;
           }
           if (route.name === 'ProfileSports') {
-            return <FontAwesomeIcon size={28} color='#244c66' icon={faIdBadge} />;
+            return <FontAwesomeIcon size={28} color='#244c66' icon={faBarChart} />;
           }
         },
         tabBarIndicatorStyle: {backgroundColor: '#244c66', height: 2},

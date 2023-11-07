@@ -114,7 +114,8 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: '600',
     letterSpacing: 2,
-    margin: 10,
+    marginTop: 50,
+    marginHorizontal: 10,
     borderRadius: 15
   },
   header: {
